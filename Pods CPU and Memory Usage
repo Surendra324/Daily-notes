@@ -1,0 +1,34 @@
+k top po -A
+
+[Admin@em-vm-1 ~]$ k top po -A
+NAMESPACE        NAME                                                    CPU(cores)   MEMORY(bytes)   
+aggregates       aggregates-8488bbd76d-xkmwp                             1m           7Mi             
+aggregates       aggregates-executor-587784cc7d-rfvcb                    10m          9Mi             
+aggregates       cron-config-service-cron-scheduler-c9fccd59b-5zhwj      923m         95Mi            
+aggregates       cron-scheduler-api-7c4fdd6fd-w6mkb                      5m           14Mi            
+alerts           alert-notifications-pipeline-5d656cb6c5-5j7gh           5m           8Mi             
+alerts           alert-status-update-service-7876fc5f8b-5smz9            0m           15Mi            
+alerts           alerts-68d964ffc7-dth6x                                 1m           13Mi            
+alerts           analytic-alert-pipeline-78494456bb-d2h46                6m           86Mi            
+alerts           notifications-6899858866-876k6                          1m           3Mi             
+auth             auth-nginx-7d94c58d7d-xrkv2                             1m           6Mi             
+auth             auth-server-5945bc477f-6swss                            1m           19Mi            
+auth             fusion-auth-5bfb7f6c6c-l5xhf                            3m           4379Mi          
+commonservices   cache-redis-master-0                                    7m           8Mi             
+commonservices   cl-es-master-0                                          370m         2711Mi          
+commonservices   cl-kibana-kibana-84c9454585-hwcl8                       18m          276Mi           
+commonservices   common-es-master-0                                      62m          2490Mi          
+commonservices   common-kibana-kibana-b7df7cc47-4s2tr                    16m          293Mi           
+commonservices   commonservices-cl-fluent-zhsgk                          951m         118Mi           
+commonservices   pgadmin-pgadmin4-59cb7ff587-zc5gc                       1m           33Mi            
+commonservices   redis-exporter-d75547bb8-7xmqc                          1m           9Mi             
+default          ewb-858787b4b9-pn4jb                                    0m           3Mi             
+default          pgbouncer-dc94cc44d-l4l9h                               1m           0Mi             
+default          reliability-portal-bcc695f9d-5l7z5                      0m           0Mi             
+default          timescale-pg12-timescale-db-0                           8m           138Mi  
+
+k top no
+
+[Admin@em-vm-1 ~]$ k top no
+NAME      CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+em-vm-1   861m         21%    17074Mi         108% 
