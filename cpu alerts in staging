@@ -1,0 +1,21 @@
+note: ( dont run taint or drain commands they are very dangerous)
+
+cordon the node :
+
+kubectl cordon <nodename>
+
+once node is cordon scheduling is disabled on that particular node. 
+
+check : k top pod 
+
+delete the pod with high cpu usage , then the pod will be scheduled to other node
+
+once the activity is completed.
+
+kubectl uncordon <nodename>
+
+Ref:
+
+https://jamesdefabia.github.io/docs/user-guide/kubectl/kubectl_cordon/
+
+https://medium.com/@yanglyu5201/kubernetes-drain-node-vs-cordon-node-8b979eb7bbbe
