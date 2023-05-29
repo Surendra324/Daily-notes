@@ -1,0 +1,2 @@
+for temporary fix , we can restart the tsdb-apm pods in prod , those pods using more connections
+k rollout restart deploy tsdb-apm
