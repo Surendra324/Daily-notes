@@ -1,1 +1,12 @@
+1. seldon-core 1.8.0 helm chart CRD error #3254
+ERROR: CustomResourceDefinition.apiextensions.k8s.io "seldondeployments.machinelearning.seldon.io" is invalid: metadata.annotations: Too long: must have at most 262144 bytes
 
+Follow this githubpages: 
+
+https://github.com/SeldonIO/seldon-core/issues/3254
+https://github.com/argoproj/argo-cd/issues/820
+https://github.com/tensorflow/tfx/issues/2079
+
+https://github.com/argoproj/argo-cd/issues/820 ****
+
+https://github.com/argoproj/gitops-engine/pull/252
