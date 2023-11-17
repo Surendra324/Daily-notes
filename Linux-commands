@@ -1,3 +1,9 @@
+## TAR ##
+
 tar a folder:
 
 tar -cvzf archive_name.tar.gz folder_to_tar
+
+untar:
+
+tar -xvzf archive_name.tar.gz
