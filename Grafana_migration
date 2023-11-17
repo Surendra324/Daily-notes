@@ -1,0 +1,26 @@
+# GRAFANA MIGRATION #
+
+Reference: https://urpylka.com/posts/post-78/
+
+CREATE DATABASE grafana_db;
+
+
+apt-get update -y
+apt-get install python3 -y
+apt-get install pgloader -y
+apt-get install sqlite3 -y
+apt-get install postgresql-client -y
+
+
+cat ./grafana_schema.sql | psql postgresql://@timescale-pg12-timescale-db-svc.default.svc.cluster.local:5432/grafana_db
+
+cat ./resfile_dump.sql | psql postgresql://@timescale-pg12-timescale-db-svc.default.svc.cluster.local:5432/grafana_db | grep -v "INSERT 0 1"
+
+CREATE USER grafana WITH LOGIN NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION PASSWORD '';
+CREATE DATABASE grafana_db WITH OWNER = grafana;
+
+monitoring-postgresql
+
+---
+
+pg_dump -U grafana -d grafana_db -f dump_file.sql
