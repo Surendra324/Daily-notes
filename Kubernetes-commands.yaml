@@ -1,0 +1,19 @@
+### Taint & Lablel Node ###
+
+kubectl taint node <nodename> app=<value>:NoSchedule
+kubectl label node <nodename> app=<value>
+
+### Untaint & Unlabel Node ###
+
+kubectl taint node <nodename> app=<value>:NoSchedule-
+kubectl label node <nodename> app=<value>-
+
+*************
+
+Cronjob reference: https://artifacthub.io/packages/helm/drpsychick/cronjobs?modal=template&template=cronjob.yaml
+
+*************
+
+To restart deployment:
+
+k rollout restart deploy <deployment-name>
