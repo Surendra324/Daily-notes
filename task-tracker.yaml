@@ -18,6 +18,7 @@
 2. TDK Cronjobs deployemnt with single values file
 3. TDK Nexus changes
 4. perftest llm-demo app deployment.
+5. Integrated velero backup and velero retry cron with ArgoCD
 
 22-Nov:
 -------
