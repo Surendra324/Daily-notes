@@ -21,5 +21,7 @@
 
 22-Nov:
 -------
-
+1. Ansible automation
+2. TDK cronjobs deployment using single values file
+3. Deployed delta-row-count app in tdk ( yet to do )
 	
