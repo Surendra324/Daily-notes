@@ -1,0 +1,25 @@
+## Apr-2023 to 31-Oct-2023 ##
+
+1. Argocd implementation across TDK, az-stg and az-prd
+2. AKS Cluster Upgrade activity
+3. Backup audit ( az-prod )
+4. MoM and EM Support
+5. Terraform automation for Minio user creation
+6. Helm automation for rbac management across TDK, az-prd and az-stg
+7. Orbia installation and Support
+8. Grafana migration to postgressql
+9. SAIL Installation
+10. Argocd setup for MoM dev and staging
+11. Setup nexus on K3S"
+
+1-Nov to 21-Nov:
+
+1. Trivy fixes for pgadmin, matomo, mariadb and mlflowserver
+2. TDK Cronjobs deployemnt with single values file
+3. TDK Nexus changes
+4. perftest llm-demo app deployment.
+
+22-Nov:
+-------
+
+	
