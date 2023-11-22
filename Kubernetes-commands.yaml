@@ -17,3 +17,11 @@ Cronjob reference: https://artifacthub.io/packages/helm/drpsychick/cronjobs?moda
 To restart deployment:
 
 k rollout restart deploy <deployment-name>
+
+*************
+
+Delete terminating namespace:
+
+kubectl get namespace "commonservices" -o json \
+  | tr -d "\n" | sed "s/\"finalizers\": \[[^]]\+\]/\"finalizers\": []/" \
+  | kubectl replace --raw /api/v1/namespaces/commonservices/finalize -f -
