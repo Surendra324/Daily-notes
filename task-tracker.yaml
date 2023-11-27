@@ -27,3 +27,7 @@
 3. Deployed delta-row-count app in tdk
 4. SAIL Nexus setuo in Progress
 	
+27-Nov:
+---
+1. Minio automation completed
+2. Deployed eventhub-consumer-lag-monitoring app in az-stg
