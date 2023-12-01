@@ -1,0 +1,18 @@
+This configuration block defines the different phases of the Index Lifecycle Management (ILM) policy for an Elasticsearch index. Let's break down each part:
+
+hot Phase:
+
+min_age: "0s": This specifies that the index will start in the "hot" phase as soon as it is created (i.e., there is no minimum age requirement).
+actions: This section specifies the actions to be taken during the "hot" phase.
+set_priority: Sets the index priority to 100. This can be useful for influencing shard allocation in a mixed cluster where indices have different priorities.
+rollover: Configures the conditions for index rollover during the "hot" phase.
+max_age: "1d": Specifies that a new index should be created if the current index is older than 1 day.
+max_primary_shard_size: "30g": Specifies that a new index should be created if the primary shard size exceeds 30 gigabytes.
+delete Phase:
+
+min_age: "14d": Specifies that the index will enter the "delete" phase when it is at least 14 days old.
+actions: This section specifies the actions to be taken during the "delete" phase.
+delete: {}: Deletes the index. Once an index reaches the specified minimum age in the "delete" phase, it will be deleted as part of the ILM policy.
+In summary, this ILM policy defines that during the "hot" phase, a new index will be created if the current index is older than 1 day or if the primary shard size exceeds 30 gigabytes. During the "delete" phase, indices that are at least 14 days old will be deleted.
+
+This structure allows for the automatic management of indices based on time and size considerations, ensuring that data is efficiently organized and retained according to your specified criteria.
