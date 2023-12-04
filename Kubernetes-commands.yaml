@@ -25,3 +25,9 @@ Delete terminating namespace:
 kubectl get namespace "commonservices" -o json \
   | tr -d "\n" | sed "s/\"finalizers\": \[[^]]\+\]/\"finalizers\": []/" \
   | kubectl replace --raw /api/v1/namespaces/commonservices/finalize -f -
+
+************
+
+kubectl get pods --namespace=$n --field-selector=status.phase!=Running -o json | jq -r '.items[].metadata.name' | xargs kubectl delete pod --namespace=$n
+
+************
