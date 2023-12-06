@@ -1,0 +1,29 @@
+if Admin given crt in the form of a encoded first decode it:
+
+If the security certificate provided by your admin is in an encoded binary format (such as DER or PKCS#7), you'll need to convert it to PEM format before creating a Kubernetes TLS secret. Here are the steps to convert a binary certificate to PEM format:
+
+Step 1: Identify the Certificate Format
+First, identify the format of the binary certificate. Common formats include DER (.der, .cer) and PKCS#7 (.p7b, .p7c). You can use the file command to check the file type:
+
+file your_certificate.cer
+
+Step 2: Convert DER to PEM (if applicable)
+If the certificate is in DER format, you can convert it to PEM format using the openssl command:
+
+openssl x509 -inform der -in your_certificate.cer -out your_certificate.pem
+
+
+Step 3: Convert PKCS#7 to PEM (if applicable)
+If the certificate is in PKCS#7 format, you can use the openssl command to extract the individual certificates and convert them to PEM format:
+
+openssl pkcs7 -in your_certificate.p7b -print_certs -out your_certificate.pem
+
+Step 4: Concatenate Certificate and Key
+If you also have the private key in a separate file, concatenate the certificate and private key into a single PEM-encoded file:
+
+cat your_certificate.pem your_private_key.key > combined.pem
+
+Step 5: Create Kubernetes Secret
+Create a Kubernetes Secret using the combined PEM file:
+
+kubectl create secret tls your-tls-secret --cert=combined.pem --key=your_private_key.key
