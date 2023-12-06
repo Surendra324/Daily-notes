@@ -1,3 +1,7 @@
+How to raise CSR-Request:
+
+https://www.golinuxcloud.com/openssl-subject-alternative-name/
+
 if Admin given crt in the form of a encoded first decode it:
 
 If the security certificate provided by your admin is in an encoded binary format (such as DER or PKCS#7), you'll need to convert it to PEM format before creating a Kubernetes TLS secret. Here are the steps to convert a binary certificate to PEM format:
