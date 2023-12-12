@@ -11,3 +11,7 @@ tar -xvzf archive_name.tar.gz
 ### Command to get VM IP ###
 
 hostname -I | cut -d' ' -f1
+
+### Find ###
+
+find / -type f -name "derby-10.14.2.0.jar" 2>/dev/null
